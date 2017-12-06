@@ -5,8 +5,8 @@ add_definitions(-Wall -Wno-unknown-pragmas -Wno-unused-function -lrt)
 set(CMAKE_CXX_STANDARD 11)
 
 file(GLOB   LIBRARIES
-        ./3d_party/lib/tinyxml2/libtinyxml2.a
         ./3d_party/lib/SimpleAmqpClient/libSimpleAmqpClientStatic.a
+        ./3d_party/lib/tinyxml2/libtinyxml2.a
         ./3d_party/lib/librabbitmq/librabbitmq.a
         ./3d_party/lib/boost/libboost_thread.a
         ./3d_party/lib/boost/libboost_chrono.a
@@ -15,8 +15,8 @@ file(GLOB   LIBRARIES
         )
 
 include_directories(
-        ./3d_party/include/SimpleAmqpClient/
         ./3d_party/include/librabbitmq/
+        ./3d_party/include/SimpleAmqpClient/
         ./3d_party/include/json/
         ./3d_party/include/tinyxml2/
         ./src/

@@ -8,9 +8,9 @@
 #include <Logger/logger.h>
 #include "mqAdapter.h"
 
-#include <SimpleAmqpClient/SimpleAmqpClient.h>
+#include <SimpleAmqpClient.h>
 #include <thread>
-#include <SimpleAmqpClient/AmqpLibraryException.h>
+#include <AmqpLibraryException.h>
 
 using namespace AmqpClient;
 

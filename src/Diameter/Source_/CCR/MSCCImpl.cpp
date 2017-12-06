@@ -7,6 +7,7 @@ static const int AVP_CODE_TRIGGER_TYPE =  870;
 
 
 CMSCCImpl::CMSCCImpl(IAVP* _pAVP) :
+	m_TriggerTypeAVPGroup(NULL),
 	m_pGrantedServiceUnits(NULL),
 	m_pRequestedServiceUnits(NULL),
 	m_pUsedServiceUnits(NULL),
@@ -15,8 +16,7 @@ CMSCCImpl::CMSCCImpl(IAVP* _pAVP) :
 	m_pFinalUnitIndication(NULL),
 	m_ReportingReason((ReportingReason)-1),
 	m_pPSFurnishChargingInformation(NULL),
-	m_pAVP(_pAVP),
-	m_TriggerTypeAVPGroup(NULL)
+	m_pAVP(_pAVP)
 {
 	m_pSSInfoAVP = new CDiameterAVPGroup(IAVP::GROUPEDSET, 1249);
 	m_pAVP->SetAVP(m_pSSInfoAVP);
@@ -367,7 +367,7 @@ int CMSCCImpl::AddTriggerType(TriggerType triggerType)
 	return m_vecTriggerTypes.size() - 1;
 }
 //----------------------------------------------------------------------------
-bool CMSCCImpl::SetTriggerType(int index, TriggerType triggerType)
+bool CMSCCImpl::SetTriggerType(unsigned int index, TriggerType triggerType)
 {
 	if(m_TriggerTypeAVPGroup == NULL)
 		return false;
@@ -424,7 +424,7 @@ bool CMSCCImpl::DelTriggerType(TriggerType triggerType)
 	/*/
 }
 //----------------------------------------------------------------------------
-bool CMSCCImpl::DelTriggerType(int index)
+bool CMSCCImpl::DelTriggerType(unsigned int index)
 {
 	return false;
 }

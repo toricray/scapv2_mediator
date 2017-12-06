@@ -30,7 +30,6 @@ protected:
 	VEC_INT                        m_vecServiceIdentifier;
 	int                            m_RatingGroup;
 	int                            m_ValidityTime;
-	int                            m_ResultCode;
 	CFinalUnitIndication          *m_pFinalUnitIndication;
 	ReportingReason                m_ReportingReason;
 	VEC_SERVICESPECIFICINFO        m_vecServiceSpecificInfo;
@@ -39,6 +38,7 @@ protected:
 
 	IAVP* m_pAVP;
 	IAVP* m_pSSInfoAVP;
+	int                            m_ResultCode;
 
 
 	int                            getTriggerTypeGroupIndex(TriggerType triggerType);
@@ -81,9 +81,9 @@ public:
 	virtual TriggerType                     GetTriggerType(int index);
 	virtual size_t                          GetTriggerTypeCount();
 	virtual int                             AddTriggerType(TriggerType triggerType);
-	virtual bool                            SetTriggerType(int index, TriggerType triggerType);
+	virtual bool                            SetTriggerType(unsigned int index, TriggerType triggerType);
 	virtual bool                            DelTriggerType(TriggerType triggerType);
-	virtual bool                            DelTriggerType(int index);
+	virtual bool                            DelTriggerType(unsigned int index);
 
 	virtual int                             DelTrigger();
 };

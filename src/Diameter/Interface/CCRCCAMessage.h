@@ -380,9 +380,9 @@ public:
 	virtual bool                            SetReportingReason(ReportingReason _RR) = 0;
 
 	virtual int                             AddTriggerType(TriggerType triggerType) = 0;
-	virtual bool                            SetTriggerType(int index, TriggerType triggerType) = 0;
+	virtual bool                            SetTriggerType(unsigned int index, TriggerType triggerType) = 0;
 	virtual bool                            DelTriggerType(TriggerType triggerType) = 0;
-	virtual bool                            DelTriggerType(int index) = 0;
+	virtual bool                            DelTriggerType(unsigned int index) = 0;
 
 	virtual int                             DelTrigger() = 0;
 };

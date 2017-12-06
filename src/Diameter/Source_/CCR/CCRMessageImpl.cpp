@@ -38,7 +38,10 @@ CCCRMessageImpl::CCCRMessageImpl():
 }
 
 CCCRMessageImpl::CCCRMessageImpl(const unsigned char* _Data, unsigned int _Size, IDiameterMessage* _pRawMessage):
-    m_ServiceIdentifier(-1),
+	m_RequestType(INITIAL),
+	m_TrafficCase(TC_UNDEFINED),
+	m_EventTimestamp(-1),
+	m_TerminationCause(-1),
 	m_Timezone(-1),
 	m_SessionId(""),
 	m_OriginHost(""),
@@ -48,10 +51,7 @@ CCCRMessageImpl::CCCRMessageImpl(const unsigned char* _Data, unsigned int _Size,
 	m_AuthApplicationId(-1),
 	m_ServiceContextId(""),
 	m_RequestNumber(-1),
-	m_RequestType(INITIAL),
-    m_TrafficCase(TC_UNDEFINED),
-	m_EventTimestamp(-1),
-    m_TerminationCause(-1),
+	m_ServiceIdentifier(-1),
 	m_RequestedAction(-1),
 	m_pUserEquipmentInfo(NULL),
 	m_pServiceInformation(NULL),
@@ -563,7 +563,7 @@ bool CCCRMessageImpl::SetTimezone(int _timezone)
     Buf[0] = 2;
     Buf[1] = 0;
     m_pAVP->SetAVP(new CDiameterAVP(IAVP::BASIC, Buf, len, 23, 0xC0, 10415));
-
+	return true;
 }
 
 bool CCCRMessageImpl::SetRequestedAction(int _requestedAction)
