@@ -1,0 +1,33 @@
+<Params>
+	<Param Key="DIAM_ORIGIN_HOST"				Value= "md1.scapv2.corp.motiv"/>
+	<Param Key="DIAM_ORIGIN_REALM"				Value= "scapv2.corp.motiv"/>
+	<Param Key="DIAM_DESTINATION_HOST_MAIN"			Value= "occ1-traffic.corp.motiv"/>
+	<Param Key="DIAM_DESTINATION_REALM_MAIN"			Value= "occ.corp.motiv"/>
+	<Param Key="DIAM_DESTINATION_HOST_RESERVE"			Value= "occ2-traffic.corp.motiv"/>
+	<Param Key="DIAM_DESTINATION_REALM_RESERVE"			Value= "occ.corp.motiv"/>
+	<Param Key="DIAM_SERVICE_ID"				Value= "SCAPv2 Mediator"/>
+	<Param Key="DIAM_MAIN_CONNECTION_STRING"		Value= "192.168.1.1:3868"/>
+	<Param Key="DIAM_RESERVE_CONNECTION_STRING"		Value= "10.180.1.1:3868"/>
+	<Param Key="DIAM_IS_PROXY"				Value= "1"/>  	
+
+	<Param Key="MQ_TYPE"					Value= "RABBITMQ"/>
+	<Param Key="SEND_QUEUE"					Value= "scapv2_response"/>
+	<Param Key="RECIVE_QUEUE"				Value= "scapv2_request"/>
+	<Param Key="MQ_SERVER"					Value= "ecs-rmq.corp.motiv"/>
+	<Param Key="MQ_USER"					Value= ""/>
+	<Param Key="MQ_PASSWORD"				Value= ""/>   
+	<Param Key="MQ_VIRT_HOST"				Value= "/ecs"/>   
+
+	<Param Key="LOG_PATH"					Value= "./log/"/>    
+	<Param Key="LOG_IN_COMMON_FILE" 			Value="1"/>
+	<Param Key="COMMON_LOG_LEVEL" 				Value="INFO"/>       	
+	<Param Key="HOST_PREFIX"				Value= "SCAPV2"/>
+	<Param Key="LOG_TO_SYSLOG" 				Value= "1"/>
+	<Param Key="SYSLOG_IDENT" 				Value= "ecs-scapv201"/>
+	<Param Key="SYSLOG_LOG_LEVEL" 				Value= "INFO"/> 
+	<Param Key="SYSLOG_FACILITY" 				Value= "local4"/>  
+</Params>
+
+
+
+
